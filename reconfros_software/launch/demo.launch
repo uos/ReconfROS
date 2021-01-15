@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find reconfros_software)/simulation/launch/small_simulation.launch"/>
+  <include file="$(find reconfros_software)/launch/trail_follower.launch"/>
+</launch>

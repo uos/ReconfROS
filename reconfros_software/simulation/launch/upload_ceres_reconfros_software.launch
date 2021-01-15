@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find reconfros_software)/simulation/urdf/ceres_reconfros_software.urdf.xacro'" />
+</launch>

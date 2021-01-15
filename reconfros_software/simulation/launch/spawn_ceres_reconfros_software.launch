@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="ceres"/>
+  <arg name="init_pose"  default="-x -1 -y 0 -z 1"/>
+  <arg name="tf_prefix" default=""/>
+  <include file="$(find reconfros_software)/simulation/launch/upload_ceres_reconfros_software.launch">
+  </include>
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_ceres_model" pkg="gazebo_ros" type="spawn_model"
+    args="$(arg init_pose) -unpause -urdf -param robot_description
+    -model $(arg robot_name)" respawn="false" output="screen">
+      <param name="tf_prefix" value="$(arg tf_prefix)" />
+    </node>
+</launch>
